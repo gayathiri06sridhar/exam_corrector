@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Answer Sheets | AI Exam Evaluation System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .upload-zone {
+            border: 2px dashed var(--border-color);
+            padding: var(--spacing-xl);
+            text-align: center;
+            border-radius: var(--radius-md);
+            background-color: #fafafa;
+            transition: border-color 0.2s, background-color 0.2s;
+            cursor: pointer;
+        }
+
+        .upload-zone:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(26, 115, 232, 0.02);
+        }
+
+        .image-card {
+            position: relative;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 120px;
+            background-color: #f1f3f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav">
+            <a href="dashboard.html" class="logo">
+                <span>🎓</span> AI Exam System
+            </a>
+            <nav class="nav-links">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="upload-question.html" class="nav-link">Upload Paper</a>
+                <a href="upload-answers.html" class="nav-link active">Evaluate Answers</a>
+                <a href="results.html" class="nav-link">Results</a>
+            </nav>
+            <div class="user-profile" style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                <span style="font-size: 0.875rem; font-weight: 500;">Prof. Anderson</span>
+                <a href="index.html" class="btn btn-outline" style="padding: 4px 12px; font-size: 0.75rem;">Logout</a>
+            </div>
+            <div class="menu-toggle" onclick="this.parentElement.classList.toggle('mobile-active')">☰</div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <main class="container section">
+            <div style="margin-bottom: var(--spacing-xl);">
+                <a href="dashboard-evaluate.html"
+                    style="color: var(--primary-color); font-size: 0.875rem; display: flex; align-items: center; gap: 4px; margin-bottom: var(--spacing-md);">
+                    ← Back to Dashboard
+                </a>
+                <h1 style="font-size: 1.75rem; margin-bottom: var(--spacing-xs);">Capture Answer Sheets</h1>
+                <p style="color: var(--text-secondary);">Use your device camera to take a pic of each student's answer
+                    sheet.</p>
+            </div>
+
+            <div class="card" style="margin-bottom: var(--spacing-xl); padding: 0; overflow: hidden;">
+                <!-- Simulated Viewfinder -->
+                <div
+                    style="aspect-ratio: 16/9; background: #000; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <div
+                        style="position: absolute; width: 40px; height: 40px; border-top: 2px solid white; border-left: 2px solid white; top: 20px; left: 20px;">
+                    </div>
+                    <div
+                        style="position: absolute; width: 40px; height: 40px; border-top: 2px solid white; border-right: 2px solid white; top: 20px; right: 20px;">
+                    </div>
+                    <div
+                        style="position: absolute; width: 40px; height: 40px; border-bottom: 2px solid white; border-left: 2px solid white; bottom: 20px; left: 20px;">
+                    </div>
+                    <div
+                        style="position: absolute; width: 40px; height: 40px; border-bottom: 2px solid white; border-right: 2px solid white; bottom: 20px; right: 20px;">
+                    </div>
+
+                    <div style="color: white; text-align: center; z-index: 10;">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">📸</div>
+                        <p style="font-weight: 500;">Camera Preview Ready</p>
+                        <p style="font-size: 0.75rem; opacity: 0.7;">Center the paper within the frame</p>
+                    </div>
+
+                    <!-- Camera Controls Overlay -->
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; right: 0; padding: var(--spacing-lg); background: linear-gradient(transparent, rgba(0,0,0,0.7)); display: flex; justify-content: center; align-items: center; gap: var(--spacing-xl);">
+                        <button class="btn"
+                            style="background: white; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+                            <div style="width: 54px; height: 54px; border-radius: 50%; border: 2px solid #000;"></div>
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    style="padding: var(--spacing-lg); display: flex; justify-content: space-between; align-items: center; background: var(--surface-color);">
+                    <div style="font-size: 0.875rem; color: var(--text-secondary);">
+                        Current Session: <strong>Midterm Mathematics</strong>
+                    </div>
+                    <div style="display: flex; gap: var(--spacing-md);">
+                        <button class="btn btn-outline" style="padding: 8px 16px;">
+                            <span style="margin-right: 8px;">📁</span> Gallery Upload
+                        </button>
+                        <button class="btn btn-primary" style="padding: 8px 16px;">
+                            Capture Photo
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg);">
+                    <h2 style="font-size: 1.125rem;">Captured Pics (3)</h2>
+                    <div style="font-size: 0.875rem; color: var(--text-secondary);">Align papers flat for best results
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3">
+                    <!-- Image Preview Mockups -->
+                    <div class="image-card">
+                        <div class="image-placeholder"
+                            style="background-image: linear-gradient(45deg, #e0e0e0 25%, #f5f5f5 25%, #f5f5f5 50%, #e0e0e0 50%, #e0e0e0 75%, #f5f5f5 75%, #f5f5f5 100%); background-size: 20px 20px;">
+                            Captured_001.jpg
+                        </div>
+                        <div
+                            style="padding: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.75rem;">Pic 1</span>
+                            <span style="color: var(--error-color); cursor: pointer; font-size: 0.75rem;">Delete</span>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <div class="image-placeholder"
+                            style="background-image: linear-gradient(45deg, #e0e0e0 25%, #f5f5f5 25%, #f5f5f5 50%, #e0e0e0 50%, #e0e0e0 75%, #f5f5f5 75%, #f5f5f5 100%); background-size: 20px 20px;">
+                            Captured_002.jpg
+                        </div>
+                        <div
+                            style="padding: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.75rem;">Pic 2</span>
+                            <span style="color: var(--error-color); cursor: pointer; font-size: 0.75rem;">Delete</span>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <div class="image-placeholder"
+                            style="background-image: linear-gradient(45deg, #e0e0e0 25%, #f5f5f5 25%, #f5f5f5 50%, #e0e0e0 50%, #e0e0e0 75%, #f5f5f5 75%, #f5f5f5 100%); background-size: 20px 20px;">
+                            Captured_003.jpg
+                        </div>
+                        <div
+                            style="padding: var(--spacing-sm); display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.75rem;">Pic 3</span>
+                            <span style="color: var(--error-color); cursor: pointer; font-size: 0.75rem;">Delete</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: var(--spacing-xl); text-align: right;">
+                    <a href="dashboard-results.html" class="btn btn-primary"
+                        style="padding-left: 48px; padding-right: 48px;">Process Captured Pics</a>
+                </div>
+            </div>
+        </main>
+</body>
+
+</html>

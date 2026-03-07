@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation Results | AI Exam Evaluation System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .badge {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: #e6f4ea;
+            color: #1e8e3e;
+        }
+
+        .badge-warning {
+            background: #fef7e0;
+            color: #b05a00;
+        }
+
+        .search-bar {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .search-input {
+            flex: 1;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav">
+            <a href="dashboard.html" class="logo">
+                <span>🎓</span> AI Exam System
+            </a>
+            <nav class="nav-links">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="upload-question.html" class="nav-link">Upload Paper</a>
+                <a href="upload-answers.html" class="nav-link">Evaluate Answers</a>
+                <a href="results.html" class="nav-link active">Results</a>
+            </nav>
+            <div class="user-profile" style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                <span style="font-size: 0.875rem; font-weight: 500;">Prof. Anderson</span>
+                <a href="index.html" class="btn btn-outline" style="padding: 4px 12px; font-size: 0.75rem;">Logout</a>
+            </div>
+            <div class="menu-toggle" onclick="this.parentElement.classList.toggle('mobile-active')">☰</div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div
+            style="margin-bottom: var(--spacing-xl); display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: var(--spacing-md);">
+            <div>
+                <h1 style="font-size: 1.75rem; margin-bottom: var(--spacing-xs);">Evaluation Results</h1>
+                <p style="color: var(--text-secondary);">Subject: <strong>Midterm Mathematics</strong> • Date: Oct 12,
+                    2025</p>
+            </div>
+            <div style="display: flex; gap: var(--spacing-md); width: 100%; max-width: 400px;">
+                <button class="btn btn-outline" style="flex: 1;">Export PDF</button>
+                <button class="btn btn-primary" style="flex: 1;">Download CSV</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search by name or roll number...">
+                <select class="form-input" style="width: auto;">
+                    <option>All Sections</option>
+                    <option>Section A</option>
+                    <option>Section B</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Roll No.</th>
+                            <th>Student Name</th>
+                            <th>Q1 (10)</th>
+                            <th>Q2 (10)</th>
+                            <th>Q3 (10)</th>
+                            <th>Total (30)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>Alice Johnson</td>
+                            <td>9</td>
+                            <td>8</td>
+                            <td>10</td>
+                            <td><strong>27</strong></td>
+                            <td><span class="badge badge-success">Passed</span></td>
+                        </tr>
+                        <tr>
+                            <td>102</td>
+                            <td>Bob Smith</td>
+                            <td>7</td>
+                            <td>6</td>
+                            <td>8</td>
+                            <td><strong>21</strong></td>
+                            <td><span class="badge badge-success">Passed</span></td>
+                        </tr>
+                        <tr>
+                            <td>103</td>
+                            <td>Charlie Davis</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td><strong>12</strong></td>
+                            <td><span class="badge badge-warning">Needs Review</span></td>
+                        </tr>
+                        <tr>
+                            <td>104</td>
+                            <td>Diana Prince</td>
+                            <td>10</td>
+                            <td>10</td>
+                            <td>9</td>
+                            <td><strong>29</strong></td>
+                            <td><span class="badge badge-success">Passed</span></td>
+                        </tr>
+                        <tr>
+                            <td>105</td>
+                            <td>Edward Norton</td>
+                            <td>8</td>
+                            <td>7</td>
+                            <td>6</td>
+                            <td><strong>21</strong></td>
+                            <td><span class="badge badge-success">Passed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div
+                style="margin-top: var(--spacing-lg); display: flex; justify-content: space-between; align-items: center; color: var(--text-secondary); font-size: 0.875rem;">
+                <div>Showing 5 of 32 students</div>
+                <div style="display: flex; gap: var(--spacing-sm);">
+                    <button class="btn btn-outline" style="padding: 4px 12px;">Previous</button>
+                    <button class="btn btn-outline"
+                        style="padding: 4px 12px; background-color: var(--primary-color); color: white; border-color: var(--primary-color);">1</button>
+                    <button class="btn btn-outline" style="padding: 4px 12px;">2</button>
+                    <button class="btn btn-outline" style="padding: 4px 12px;">3</button>
+                    <button class="btn btn-outline" style="padding: 4px 12px;">Next</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

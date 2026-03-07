@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Question Paper | AI Exam Evaluation System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav">
+            <a href="dashboard.html" class="logo">
+                <span>🎓</span> AI Exam System
+            </a>
+            <nav class="nav-links">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="upload-question.html" class="nav-link active">Upload Paper</a>
+                <a href="upload-answers.html" class="nav-link">Evaluate Answers</a>
+                <a href="results.html" class="nav-link">Results</a>
+            </nav>
+            <div class="user-profile" style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                <span style="font-size: 0.875rem; font-weight: 500;">Prof. Anderson</span>
+                <a href="index.html" class="btn btn-outline" style="padding: 4px 12px; font-size: 0.75rem;">Logout</a>
+            </div>
+            <div class="menu-toggle" onclick="this.parentElement.classList.toggle('mobile-active')">☰</div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div style="margin-bottom: var(--spacing-xl);">
+            <a href="dashboard.html"
+                style="color: var(--primary-color); font-size: 0.875rem; display: flex; align-items: center; gap: 4px; margin-bottom: var(--spacing-md);">
+                ← Back to Dashboard
+            </a>
+            <h1 style="font-size: 1.75rem; margin-bottom: var(--spacing-xs);">Upload Question Paper</h1>
+            <p style="color: var(--text-secondary);">Provide the source material for AI evaluation.</p>
+        </div>
+
+        <div class="grid grid-cols-2">
+            <div class="card">
+                <h3 style="margin-bottom: var(--spacing-lg);">1. Question Paper File</h3>
+                <div
+                    style="border: 2px dashed var(--border-color); padding: var(--spacing-xl); text-align: center; border-radius: var(--radius-md); background-color: #fafafa; margin-bottom: var(--spacing-lg);">
+                    <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">📄</div>
+                    <p style="font-weight: 500; margin-bottom: var(--spacing-sm);">Drag and drop PDF/Image here</p>
+                    <p style="color: var(--text-secondary); font-size: 0.75rem; margin-bottom: var(--spacing-lg);">Max
+                        file size: 10MB</p>
+                    <label for="file-upload" class="btn btn-outline" style="cursor: pointer;">Browse Files</label>
+                    <input id="file-upload" type="file" style="display: none;">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Subject Name</label>
+                    <input type="text" class="form-input" placeholder="e.g. Advanced Calculus">
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 style="margin-bottom: var(--spacing-lg);">2. Evaluation Settings</h3>
+
+                <div class="form-group">
+                    <label class="form-label">Strictness Level</label>
+                    <div style="display: flex; flex-direction: column; gap: var(--spacing-sm);">
+                        <label
+                            style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                            <input type="radio" name="strictness" value="easy">
+                            <div>
+                                <div style="font-weight: 600;">Easy</div>
+                                <div style="font-size: 0.75rem; color: var(--text-secondary);">Focus on conceptual
+                                    understanding, lenient with syntax/spelling.</div>
+                            </div>
+                        </label>
+                        <label
+                            style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer; padding: var(--spacing-sm); border: 1px solid var(--primary-color); background-color: rgba(26, 115, 232, 0.05); border-radius: var(--radius-sm);">
+                            <input type="radio" name="strictness" value="medium" checked>
+                            <div>
+                                <div style="font-weight: 600;">Medium (Default)</div>
+                                <div style="font-size: 0.75rem; color: var(--text-secondary);">Balanced evaluation
+                                    across all parameters.</div>
+                            </div>
+                        </label>
+                        <label
+                            style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+                            <input type="radio" name="strictness" value="strict">
+                            <div>
+                                <div style="font-weight: 600;">Strict</div>
+                                <div style="font-size: 0.75rem; color: var(--text-secondary);">Rigorous check for
+                                    accuracy, terminology, and presentation.</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div style="margin-top: var(--spacing-xl);">
+                    <a href="dashboard-evaluate.html" class="btn btn-primary" style="width: 100%;">Save and Continue</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

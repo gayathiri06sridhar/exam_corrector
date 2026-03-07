@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | AI Exam Evaluation System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav">
+            <a href="dashboard.html" class="logo">
+                <span>🎓</span> AI Exam System
+            </a>
+            <nav class="nav-links">
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="upload-question.html" class="nav-link">Upload Paper</a>
+                <a href="upload-answers.html" class="nav-link">Evaluate Answers</a>
+                <a href="results.html" class="nav-link">Results</a>
+            </nav>
+            <div class="user-profile" style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                <span style="font-size: 0.875rem; font-weight: 500;">Prof. Anderson</span>
+                <a href="index.html" class="btn btn-outline" style="padding: 4px 12px; font-size: 0.75rem;">Logout</a>
+            </div>
+            <div class="menu-toggle" onclick="this.parentElement.classList.toggle('mobile-active')">☰</div>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div style="margin-bottom: var(--spacing-xl);">
+            <h1 style="font-size: 1.75rem; margin-bottom: var(--spacing-xs);">Teacher Dashboard</h1>
+            <p style="color: var(--text-secondary);">Manage your exams and evaluate student performance efficiently.</p>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div
+            style="display: flex; justify-content: center; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-xl); flex-wrap: wrap;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xs);">
+                <div
+                    style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem;">
+                    1</div>
+                <span style="font-size: 0.75rem; font-weight: 600; color: var(--primary-color);">Setup</span>
+            </div>
+            <div style="width: 40px; height: 2px; background: var(--border-color); margin-top: -16px;"></div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xs);">
+                <div
+                    style="width: 32px; height: 32px; border-radius: 50%; background: var(--bg-color); border: 2px solid var(--border-color); color: var(--text-secondary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem;">
+                    2</div>
+                <span style="font-size: 0.75rem; font-weight: 500; color: var(--text-secondary);">Evaluate</span>
+            </div>
+            <div style="width: 40px; height: 2px; background: var(--border-color); margin-top: -16px;"></div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-xs);">
+                <div
+                    style="width: 32px; height: 32px; border-radius: 50%; background: var(--bg-color); border: 2px solid var(--border-color); color: var(--text-secondary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem;">
+                    3</div>
+                <span style="font-size: 0.75rem; font-weight: 500; color: var(--text-secondary);">Results</span>
+            </div>
+        </div>
+
+        <div style="max-width: 600px; margin: 0 auto;">
+            <!-- Active Step: Step 1 -->
+            <div class="card"
+                style="display: flex; flex-direction: column; gap: var(--spacing-lg); padding: var(--spacing-xl); text-align: center; border-top: 4px solid var(--primary-color);">
+                <div style="font-size: 3rem;">📄</div>
+                <div>
+                    <h2 style="margin-bottom: var(--spacing-sm);">Step 1: Upload Question Paper</h2>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        Start by providing the question paper. This allows our AI to understand the exam structure,
+                        marking scheme, and correct answers before evaluating student sheets.
+                    </p>
+                </div>
+
+                <div
+                    style="display: flex; flex-direction: column; gap: var(--spacing-md); margin-top: var(--spacing-md);">
+                    <a href="upload-question.html" class="btn btn-primary"
+                        style="padding: var(--spacing-md);">Initialize Evaluation</a>
+                    <p style="font-size: 0.75rem; color: var(--text-secondary);">Accepted formats: PDF, JPEG, PNG</p>
+                </div>
+            </div>
+
+            <!-- Contextual Help -->
+            <div
+                style="margin-top: var(--spacing-xl); padding: var(--spacing-md); border-radius: var(--radius-md); background: rgba(26, 115, 232, 0.05); border: 1px solid rgba(26, 115, 232, 0.1); display: flex; gap: var(--spacing-md); align-items: flex-start;">
+                <span style="font-size: 1.25rem;">💡</span>
+                <p style="font-size: 0.875rem; color: var(--secondary-color);">
+                    <strong>Tip:</strong> Ensure the question paper is clearly legible for the best AI accuracy during
+                    the evaluation phase.
+                </p>
+            </div>
+        </div>
+
+
+    </main>
+</body>
+
+</html>
