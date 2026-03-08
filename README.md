@@ -1,1 +1,1 @@
-# exam_corrector
+An AI Exam Evaluation System is a web-based platform designed to assist teachers in evaluating exam papers using artificial intelligence. Teachers upload the question paper, capture photos of student answer sheets, and the system processes them using OCR and a Large Language Model (LLM) to automatically evaluate answers and assign marks.

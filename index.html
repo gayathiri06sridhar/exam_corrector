@@ -1,45 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | AI Exam Evaluation System</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Exam Evaluation System</title>
 </head>
-<body style="display: flex; align-items: center; justify-content: center; min-height: 100vh;">
-    <div class="container" style="width: 100%; max-width: 400px;">
-        <div class="card">
-            <div style="text-align: center; margin-bottom: var(--spacing-xl);">
-                <div class="logo" style="justify-content: center; font-size: 1.5rem; margin-bottom: var(--spacing-sm);">
-                    <span>🎓</span> AI Exam System
-                </div>
-                <p style="color: var(--text-secondary); font-size: 0.875rem;">Welcome back, Teacher!</p>
-            </div>
-            
-            <form action="dashboard.html">
-                <div class="form-group">
-                    <label for="email" class="form-label">Email Address</label>
-                    <input type="email" id="email" class="form-input" placeholder="teacher@school.edu" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" id="password" class="form-input" placeholder="••••••••" required>
-                </div>
-                
-                <div style="margin-bottom: var(--spacing-lg);">
-                    <a href="#" style="font-size: 0.75rem; color: var(--primary-color);">Forgot password?</a>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" style="width: 100%; padding: var(--spacing-md);">Login</button>
-            </form>
-            
-            <div style="text-align: center; margin-top: var(--spacing-lg); border-top: 1px solid var(--border-color); padding-top: var(--spacing-md);">
-                <p style="font-size: 0.875rem; color: var(--text-secondary);">
-                    Don't have an account? <a href="#" style="color: var(--primary-color);">Contact Admin</a>
-                </p>
-            </div>
-        </div>
-    </div>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
 </body>
+
 </html>
